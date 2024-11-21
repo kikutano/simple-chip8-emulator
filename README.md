@@ -1,2 +1,11 @@
-# simple-chip8-emulator
-A simple chip 8 emulator, using C and SDL2.
+# Know Issues:
+- Halting keyboard
+- Quirks test, some glitch in Chip-8 demo
+
+
+# Not supported yet:
+- Sound
+- Scrolling
+
+# Test roms reference:
+https://github.com/Timendus/chip8-test-suite
