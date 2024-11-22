@@ -67,6 +67,32 @@ void handleInput(const SDL_Event* event)
 	}
 }
 
+void drawFrameScreen(SDL_Renderer* renderer)
+{
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+	SDL_RenderClear(renderer);
+
+	SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+	for (int i = 0; i < 64; ++i)
+	{
+		for (int j = 0; j < 32; ++j)
+		{
+			if (screenData[i][j] > 0)
+			{
+				SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+				SDL_RenderDrawPoint(renderer, i, j);
+			}
+			else {
+				SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+				SDL_RenderDrawPoint(renderer, i, j);
+			}
+		}
+	}
+
+	SDL_RenderPresent(renderer);
+	SDL_Delay(0);
+}
+
 const int LOGICAL_WIDTH = 64;
 const int LOGICAL_HEIGHT = 32;
 const int SCREEN_WIDTH = 640;
@@ -81,7 +107,7 @@ int main() {
 	}
 
 	SDL_Window* window = SDL_CreateWindow(
-		"Chip 8 Emulator", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+		"Chip 8 Emulator 0.9.0", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
 		LOGICAL_WIDTH * 15, LOGICAL_HEIGHT * 15, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
 
 	if (!window) {
@@ -117,29 +143,7 @@ int main() {
 		}
 
 		processNextOpcode();
-		
-		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-		SDL_RenderClear(renderer);
-
-		SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-		for (int i = 0; i < 64; ++i)
-		{
-			for (int j = 0; j < 32; ++j)
-			{
-				if (screenData[i][j] > 0)
-				{
-					SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-					SDL_RenderDrawPoint(renderer, i, j);
-				}
-				else {
-					SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-					SDL_RenderDrawPoint(renderer, i, j);
-				}
-			}
-		}
-
-		SDL_RenderPresent(renderer);
-		SDL_Delay(0);
+		drawFrameScreen(renderer);
 	}
 
 	SDL_DestroyRenderer(renderer);
