@@ -1,10 +1,12 @@
 ﻿# Simple Chip 8 Emulator in C
-I was always fashinating about how emulators are coded. So finally I started to write my own first emulator fo Chip-8 system. This is the simplest emulator that you can write, and it's a good starting point for me to understand somenthing about emulations world :). So I keep all code as simple as I can, using plain C and SDL2. I will integrate a Tutorial to make more understable the code and allows everybody to start to write they own emulator. Stay tuned!
+I have always been fascinated by how emulators are built. So, I finally decided to write my first emulator for the Chip-8 system. The Chip-8 is one of the simplest systems you can emulate, making it a perfect starting point for me to learn more about the world of emulation. I kept the code as straightforward as possible, using plain C and SDL2.
+
+To help others get started with their own emulators, I plan to integrate a tutorial explaining the code in detail. Stay tuned!
 
 # State of emulator
-This project emulate **only Chip-8 basic** instructions. No extensions for now! As references to test the emulator I used this github project [here](https://github.com/Timendus/chip8-test-suite). It's a suite of testing roms to understand if your emulator it's working fine. 
+This project emulates only the basic Chip-8 instructions. No extensions are implemented yet! As a reference to test the emulator, I used this [Chip-8 Test Suite](https://github.com/Timendus/chip8-test-suite) on GitHub. It includes a set of testing ROMs to verify if your emulator is functioning correctly.
 
-#### Test passed ✔️
+#### Tests passed ✔️
 - [CHIP-8 splash screen](https://github.com/Timendus/chip8-test-suite?tab=readme-ov-file#chip-8-splash-screen) ✔️
 ![CHIP-8 splash](https://github.com/Timendus/chip8-test-suite/raw/main/pictures/chip-8-logo.png)
 - [IBM Logo](https://github.com/Timendus/chip8-test-suite?tab=readme-ov-file#chip-8-splash-screen) ✔️
@@ -19,9 +21,9 @@ This project emulate **only Chip-8 basic** instructions. No extensions for now! 
 ![Keypad test](https://github.com/Timendus/chip8-test-suite/raw/main/pictures/keypad-menu.png)
 
 ### Kwon Issues️ ⚠
-- Audio not supported yet
-- Quirks test has some gliches
-- Keyboard half dosen't pass
+- Audio is not yet supported.
+- The Quirks Test has some glitches.
+- The Keyboard Test fails Halt test.
 
 # Resources
 - http://www.codeslinger.co.uk/pages/projects/chip8.html
